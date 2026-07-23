@@ -1,25 +1,26 @@
+"use client";
+import { Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import ItineraryView from "@/components/ItineraryView";
 import { generatePlan } from "@/lib/recommendations";
 import type { Preferences } from "@/types/planner";
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | undefined>>;
-}) {
-  const q = await searchParams;
+
+function ItineraryContent() {
+  const q = useSearchParams();
   const p: Preferences = {
-    date: q.date || "2026-07-25",
-    startTime: q.startTime || "12:00",
-    duration: (q.duration as Preferences["duration"]) || "medium",
-    neighborhood: q.neighborhood || "Midtown",
-    audience: q.audience || "friends",
-    vibe: q.vibe || "relaxed",
-    budget: (q.budget as Preferences["budget"]) || "$$",
-    weather: (q.weather as Preferences["weather"]) || "Sunny",
-    indoorOutdoor: q.indoorOutdoor,
+    date: q.get("date") || "2026-07-25",
+    startTime: q.get("startTime") || "12:00",
+    duration: (q.get("duration") as Preferences["duration"]) || "medium",
+    neighborhood: q.get("neighborhood") || "Midtown",
+    audience: q.get("audience") || "friends",
+    vibe: q.get("vibe") || "relaxed",
+    budget: (q.get("budget") as Preferences["budget"]) || "$$",
+    weather: (q.get("weather") as Preferences["weather"]) || "Sunny",
+    indoorOutdoor: q.get("indoorOutdoor") || undefined,
   };
-  const plan = generatePlan(p, q.stops?.split(","));
+  const stopsParam = q.get("stops");
+  const plan = generatePlan(p, stopsParam ? stopsParam.split(",") : undefined);
   return (
     <main className="shell">
       <div className="topbar">
@@ -31,5 +32,13 @@ export default async function Page({
       <h1 className="page-title">Your summer plan.</h1>
       <ItineraryView initial={plan} />
     </main>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <ItineraryContent />
+    </Suspense>
   );
 }

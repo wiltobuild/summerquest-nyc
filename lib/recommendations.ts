@@ -9,11 +9,11 @@ import type {
 const rank = { free: 0, $: 1, $$: 2, $$$: 3 };
 const roleCats: Record<Role, string[]> = {
   Opening: ["park", "museum", "garden", "waterfront"],
-  Main: ["museum", "park", "beach", "rooftop", "garden"],
+  Main: ["museum", "park", "beach", "rooftop", "garden", "activity", "show", "bookstore"],
   Food: ["food", "market"],
   Sunset: ["waterfront", "rooftop", "park"],
   Event: [],
-  Optional: ["market", "waterfront", "museum"],
+  Optional: ["market", "waterfront", "museum", "activity", "show", "bookstore"],
 };
 export function distance(
   a: { lat: number; lng: number },

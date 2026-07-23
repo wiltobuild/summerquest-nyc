@@ -11,6 +11,9 @@ const icons: Record<string, string> = {
   garden: "🌿",
   beach: "🏖️",
   market: "🛍️",
+  activity: "🎯",
+  show: "🎤",
+  bookstore: "📚",
 };
 export default function ItineraryView({ initial }: { initial: Itinerary }) {
   const [plan, setPlan] = useState(initial);

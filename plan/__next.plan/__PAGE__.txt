@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[22016,["/summerquest-nyc/_next/static/chunks/05-c3ty_6dwfk.js","/summerquest-nyc/_next/static/chunks/14mrh2-p_w84d.js","/summerquest-nyc/_next/static/chunks/20ttr7ldjfl10.js"],""]
+3:I[8237,["/summerquest-nyc/_next/static/chunks/05-c3ty_6dwfk.js","/summerquest-nyc/_next/static/chunks/14mrh2-p_w84d.js","/summerquest-nyc/_next/static/chunks/20ttr7ldjfl10.js"],"default"]
+4:I[97367,["/summerquest-nyc/_next/static/chunks/05-c3ty_6dwfk.js","/summerquest-nyc/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"shell","children":[["$","div",null,{"className":"topbar","children":[["$","$L2",null,{"className":"brand","href":"/","children":["SummerQuest ",["$","span",null,{"children":"NYC"}]]}],["$","$L2",null,{"href":"/featured","children":"Featured Plans"}]]}],["$","h1",null,{"className":"page-title","children":"Build your day."}],["$","p",null,{"className":"muted","children":"A few details, then one compatible NYC summer plan."}],["$","$L3",null,{}]]}],[["$","script","script-0",{"src":"/summerquest-nyc/_next/static/chunks/20ttr7ldjfl10.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"6GQPHkK3vOGHA6TCdeDH7"}
+6:null

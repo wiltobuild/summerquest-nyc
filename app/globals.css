@@ -1,26 +1,255 @@
 @import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #17243b;
+  --sky: #ddf3ff;
+  --orange: #ff784f;
+  --pink: #ffb2ae;
+  --cream: #fffaf0;
+  --yellow: #ffd65a;
+  --line: #d9e2e8;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+}
+.shell {
+  width: min(1100px, 100%);
+  margin: auto;
+  padding: 20px;
+}
+.landing nav,
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 1.2rem;
+}
+.brand span {
+  color: var(--orange);
+}
+a {
+  color: inherit;
+}
+.hero {
+  padding: 72px 0 55px;
+  max-width: 760px;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 8vw, 5.8rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  margin: 12px 0 22px;
+}
+.hero p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 610px;
+}
+.eyebrow {
+  color: #b34b39;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+.actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.primary {
+  background: var(--orange);
+  color: white;
+}
+.primary:hover {
+  background: #e7623d;
+}
+.secondary {
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+.text-link {
+  font-weight: 700;
+}
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.value-grid article,
+.card,
+.form-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+}
+.value-grid p {
+  margin-bottom: 0;
+  color: #526276;
+}
+.page-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.05em;
+  margin: 36px 0 8px;
+}
+.muted {
+  color: #657386;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.field input,
+.field select {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+}
+.chip.active {
+  background: var(--sky);
+  border-color: #7fc8ed;
+}
+.more {
+  margin: 18px 0;
+}
+.summary {
+  background: var(--sky);
+  padding: 18px;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+.warning {
+  background: #fff1c9;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+.stops {
+  display: grid;
+  gap: 14px;
+}
+.stop {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 15px;
+  align-items: start;
+}
+.visual {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: #ffe1d7;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+}
+.role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  color: #b34b39;
+}
+.stop h2 {
+  font-size: 1.2rem;
+  margin: 4px 0;
+}
+.stop p {
+  margin: 6px 0;
+  color: #526276;
+  line-height: 1.45;
+}
+.meta {
+  font-size: 0.85rem;
+}
+.stop-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.stop-actions a,
+.stop-actions button {
+  font-size: 0.8rem;
+  padding: 8px 10px;
+}
+.footer-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 650px) {
+  .value-grid,
+  .featured-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding-top: 45px;
+  }
+  .stop {
+    grid-template-columns: 48px 1fr;
+  }
+  .visual {
+    width: 48px;
+    height: 48px;
+  }
+  .stop-actions {
+    grid-column: 2;
+  }
+  .shell {
+    padding: 16px;
+  }
 }

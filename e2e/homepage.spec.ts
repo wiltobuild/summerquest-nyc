@@ -11,7 +11,9 @@ test("homepage renders without console errors", async ({ page }) => {
 
   await page.goto("/");
   await expect(
-    page.getByText("SummerQuest NYC foundation is ready.")
+    page.getByRole("heading", {
+      name: "A summer day in the city that fits together.",
+    })
   ).toBeVisible();
   expect(consoleErrors).toEqual([]);
 });
